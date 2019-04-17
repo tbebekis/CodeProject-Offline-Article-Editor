@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CP Article Editor</title>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor/lang/_languages.js"></script>
+<base href="">
+</head>
+<body>
+<!-- Editor.html for CodeProject Article Editor -->
+<!-- Huseyin Atasoy                             -->
+<!-- atasoyweb.net [at] gmail.com               -->
+<!-- www.atasoyweb.net                          -->
+<!-- September 2012                             -->
+<div id="EditorArea"> &nbsp; </div>
+<script type="text/javascript">
+	function getHTMLData()
+	{
+		return CKEDITOR.instances.EditorArea.getData();
+	}
+	function prepare()
+	{
+		CKEDITOR.replace('EditorArea',
+		{
+			fullPage 		: false,
+			language 		: 'en',
+			resize_enabled 	: false,
+			uiColor 		: '#CCC',
+			tabSpaces		: 4,
+			contentsCss 	: 'CodeProject.css',
+			removePlugins	: 'contextmenu,liststyle,tabletools',
+			docType			: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+			toolbar			:
+			[
+				{ name: 'document', items : [ 'Source','-','Preview' ] },
+				{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+				{ name: 'editing', items : [ 'Find','Replace','-','SelectAll' ] },
+				{ name: 'insert', items : [ 'Image','Table','SpecialChar' ] },
+				{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+				{ name: 'tools', items : [ 'ShowBlocks' ] },
+				'/',
+				{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+				{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote', '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+				{ name: 'styles', items : [ 'Styles','Format' ] }
+			]
+		});
+		CKEDITOR.on('instanceReady', function(evt)
+		{
+			var editor = evt.editor;
+			editor.execCommand('maximize');
+			editor.dataProcessor.writer.indentationChars = '    ';
+			editor.dataProcessor.writer.lineBreakChars  = '\r\n';
+			editor.dataProcessor.writer.selfClosingEnd = '>';
+		});
+	}
+</script>
+</body>
+</html>

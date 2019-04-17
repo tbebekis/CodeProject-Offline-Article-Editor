@@ -1,0 +1,2 @@
+Modified files:
+1. ckeditor\plugins\image\dialogs\image\image.js
