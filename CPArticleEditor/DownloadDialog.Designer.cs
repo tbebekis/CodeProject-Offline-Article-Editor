@@ -56,13 +56,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 32);
+            this.panel1.Size = new System.Drawing.Size(784, 32);
             this.panel1.TabIndex = 2;
             // 
             // btnClearLog
             // 
             this.btnClearLog.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClearLog.Location = new System.Drawing.Point(790, 0);
+            this.btnClearLog.Location = new System.Drawing.Point(566, 0);
             this.btnClearLog.Name = "btnClearLog";
             this.btnClearLog.Size = new System.Drawing.Size(100, 32);
             this.btnClearLog.TabIndex = 13;
@@ -72,7 +72,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(890, 0);
+            this.panel3.Location = new System.Drawing.Point(666, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(18, 32);
             this.panel3.TabIndex = 11;
@@ -98,7 +98,7 @@
             // btnExit
             // 
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.Location = new System.Drawing.Point(908, 0);
+            this.btnExit.Location = new System.Drawing.Point(684, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 32);
             this.btnExit.TabIndex = 1;
@@ -120,6 +120,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 32);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -128,8 +129,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.edtLog);
-            this.splitContainer1.Size = new System.Drawing.Size(1008, 697);
-            this.splitContainer1.SplitterDistance = 367;
+            this.splitContainer1.Size = new System.Drawing.Size(784, 529);
+            this.splitContainer1.SplitterDistance = 249;
             this.splitContainer1.TabIndex = 3;
             // 
             // lboArticles
@@ -138,7 +139,7 @@
             this.lboArticles.FormattingEnabled = true;
             this.lboArticles.Location = new System.Drawing.Point(0, 0);
             this.lboArticles.Name = "lboArticles";
-            this.lboArticles.Size = new System.Drawing.Size(367, 697);
+            this.lboArticles.Size = new System.Drawing.Size(784, 249);
             this.lboArticles.TabIndex = 9;
             // 
             // edtLog
@@ -149,14 +150,14 @@
             this.edtLog.Multiline = true;
             this.edtLog.Name = "edtLog";
             this.edtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.edtLog.Size = new System.Drawing.Size(637, 697);
+            this.edtLog.Size = new System.Drawing.Size(784, 276);
             this.edtLog.TabIndex = 1;
             // 
             // DownloadDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.MinimizeBox = false;
