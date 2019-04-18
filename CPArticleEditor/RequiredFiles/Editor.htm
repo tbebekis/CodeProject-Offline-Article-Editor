@@ -51,7 +51,67 @@
 			editor.execCommand('maximize');
 			editor.dataProcessor.writer.indentationChars = '    ';
 			editor.dataProcessor.writer.lineBreakChars  = '\r\n';
-			editor.dataProcessor.writer.selfClosingEnd = '>';
+            editor.dataProcessor.writer.selfClosingEnd = '>';
+
+            // teo - BEGIN
+            // SEE: https://docs-old.ckeditor.com/ckeditor_api/symbols/CKEDITOR.config.html
+
+            function GetSelectedText(editor) {
+                var Result = editor.getSelection().getSelectedText(); 
+                return Result;
+            }
+
+ 
+            // custom commands
+            editor.addCommand('HEADER2', {
+                exec: function (editor, data) {
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'Header2';
+                    editor.insertHtml('<h2>' + S + '</h2>');
+                }
+            });
+
+            editor.addCommand('HEADER3', {
+                exec: function (editor, data) {
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'Header3';
+                    editor.insertHtml('<h3>' + S + '</h3>');
+                }
+            });
+
+            editor.addCommand('CODE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'CODE';
+                    editor.insertHtml('<code>' + S + '</code>');
+                }
+            });
+
+            editor.addCommand('PRE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'PRE';
+                    editor.insertHtml('<pre>' + S + '</pre>');
+                }
+            });
+
+            editor.addCommand('BLOCKQUOTE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'NOTE: ';
+                    editor.insertHtml('<blockquote>' + S + '</blockquote>');
+                }
+            });
+
+            // shortcuts (bound to custom commands)
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 67 /* C */] = 'CODE';  
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 80 /* P */] = 'PRE';
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 81 /* Q */] = 'BLOCKQUOTE';
+
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 50 /* 2 */] = 'HEADER2';
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 51 /* 3 */] = 'HEADER3';
+            // teo - END
+
 		});
 	}
 </script>

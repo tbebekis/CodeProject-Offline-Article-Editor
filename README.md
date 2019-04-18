@@ -9,3 +9,13 @@ Original article link:
 https://www.codeproject.com/Articles/468625/Offline-Article-Editor-For-CodeProject
 
 Credits go to Huseyin Atasoy
+
+## Additional Shortcuts
+
+Alt + C    adds a code element
+Alt + P    adds a pre element
+Alt + Q    adds a blockquote element
+
+Alt + 2    adds a h2 element
+Alt + 3    adds a h3 element
+ 
